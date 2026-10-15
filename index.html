@@ -74,11 +74,12 @@
       <h2 class="entrada">El ritmo se ve</h2>
       <p class="entrada">Dale al play: suena un fragmento de su último tema y la portada va con él. El grano, el cromatismo y el latido del fondo siguen la música de verdad, no una animación en bucle.</p>
       <div class="altavoz entrada">
-        <button class="boton ambar" id="activar" type="button">Encender el latido</button>
+        <button class="boton ambar" id="activar" type="button">Poner la canción</button>
         <div class="lector"><span>suena <b>Grecofernanda</b></span><span>fragmento <b>30 s</b></span><span>estado <b id="estado">en pausa</b></span></div>
       </div>
-      <p class="aviso entrada">Fragmento de 30 segundos de «Grecofernanda» (con Grecas), su último tema. Se puede pausar en cualquier momento.</p>
-      <audio id="clip" src="assets/audio/grecofernanda-30s.mp3" preload="metadata" loop></audio>
+      <p class="aviso entrada">Suena un fragmento de 30 segundos de «Grecofernanda» (con Grecas), su último tema, mientras la portada late con él. Se puede pausar cuando quieras.</p>
+      <audio id="clip" src="assets/audio/grecofernanda-30s.mp3" preload="auto" loop playsinline></audio>
+      <audio id="clave" src="assets/audio/grecofernanda-30s.mp3" preload="none" loop muted playsinline aria-hidden="true"></audio>
     </div>
     <div class="entrada"><canvas id="pulso" width="1240" height="775" aria-label="Visual del ritmo"></canvas></div>
   </div>
