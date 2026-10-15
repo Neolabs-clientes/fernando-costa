@@ -157,3 +157,13 @@
       '&body=' + encodeURIComponent(cuerpo);
   });
 })();
+
+/* Al poner un video o su musica, la portada se enciende */
+(function () {
+  document.querySelectorAll('.video').forEach(function (v) {
+    v.addEventListener('click', function () {
+      var t = setInterval(function () { if (window.__pusarPulso) window.__pusarPulso(0.85); }, 120);
+      setTimeout(function () { clearInterval(t); }, 9000);
+    });
+  });
+})();

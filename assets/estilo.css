@@ -199,3 +199,19 @@ h3{font-size:clamp(20px,2.2vw,30px)}
 .movil.abierto{transform:none}
 .movil a{font-family:var(--display);font-size:26px;padding:12px 0;border-bottom:1px solid var(--linea);text-transform:uppercase;letter-spacing:.04em}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.5s}
+
+/* ---------- escucha (reproductor oficial) ---------- */
+.escucha{padding:clamp(70px,10vw,150px) 0;background:var(--carbon);border-top:1px solid var(--linea)}
+.escucha .rejilla{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(26px,4vw,56px);margin-top:clamp(28px,4vw,48px);align-items:start}
+.escucha .caja-spo{background:var(--panel);border:1px solid var(--linea);padding:10px}
+.escucha iframe{display:block;width:100%;border:0}
+.escucha .lado{display:flex;flex-direction:column;gap:16px}
+.escucha .destacado{border:1px solid var(--linea);padding:22px;background:var(--panel)}
+.escucha .destacado b{display:block;font-family:var(--display);font-size:26px}
+.escucha .destacado span{display:block;color:var(--gris);font-size:15px;margin-top:6px}
+.escucha .vias{list-style:none;display:flex;flex-direction:column;gap:12px}
+.escucha .vias a{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--linea);padding:14px 16px;font-size:14px;transition:.24s}
+.escucha .vias a:hover{border-color:var(--ambar);color:var(--ambar)}
+.escucha .vias em{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+@media(max-width:940px){.escucha .rejilla{grid-template-columns:1fr}}
+@media(max-width:520px){.escucha .caja-spo{padding:0}.escucha .wrap{padding-left:10px;padding-right:10px}}
