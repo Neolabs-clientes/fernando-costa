@@ -1,80 +1,55 @@
-/* FERNANDOCOSTA — el pulso: la web late con el ritmo.
-   En la demo el ritmo lo genera la propia web (120 BPM). Con el máster
-   del artista, este mismo analizador late con su tema real. */
+/* FERNANDOCOSTA — el latido: la web late con su música */
 (function () {
-  'use strict';
+  var audio = document.getElementById('clip');
   var boton = document.getElementById('activar');
   var lienzo = document.getElementById('pulso');
-  if (!boton || !lienzo) return;
-  var ctx2d = lienzo.getContext('2d');
-  var audio = null, analizador = null, datos = null, maestro = null;
-  var siguiente = 0, paso = 0, tempo = 120, encendido = false;
-
-  function talla() {
-    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-    lienzo.width = lienzo.clientWidth * dpr;
-    lienzo.height = lienzo.clientHeight * dpr;
+  var estado = document.getElementById('estado');
+  if (!audio || !boton || !lienzo) return;
+  var ctx = null, an = null, datos = null, raf = null, sonando = false;
+  function prepara() {
+    if (ctx) return;
+    var AC = window.AudioContext || window.webkitAudioContext;
+    ctx = new AC();
+    var fuente = ctx.createMediaElementSource(audio);
+    an = ctx.createAnalyser();
+    an.fftSize = 512;
+    an.smoothingTimeConstant = 0.78;
+    datos = new Uint8Array(an.frequencyBinCount);
+    fuente.connect(an);
+    an.connect(ctx.destination);
   }
-  window.addEventListener('resize', talla); talla();
-
-  function golpe(t) {
-    var o = audio.createOscillator(), g = audio.createGain();
-    o.type = 'sine'; o.frequency.setValueAtTime(140, t);
-    o.frequency.exponentialRampToValueAtTime(48, t + 0.12);
-    g.gain.setValueAtTime(0.9, t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.34);
-    o.connect(g); g.connect(maestro); o.start(t); o.stop(t + 0.36);
-  }
-  function chasquido(t) {
-    var b = audio.createBuffer(1, 2048, audio.sampleRate), d = b.getChannelData(0);
-    for (var i = 0; i < 2048; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / 2048);
-    var s = audio.createBufferSource(); s.buffer = b;
-    var f = audio.createBiquadFilter(); f.type = 'highpass'; f.frequency.value = 7000;
-    var g = audio.createGain(); g.gain.value = 0.16;
-    s.connect(f); f.connect(g); g.connect(maestro); s.start(t);
-  }
-  function programa() {
-    while (siguiente < audio.currentTime + 0.25) {
-      if (paso % 4 === 0) golpe(siguiente);
-      if (paso % 4 === 2) chasquido(siguiente);
-      if (paso % 2 === 1) chasquido(siguiente);
-      siguiente += 30 / tempo;
-      paso++;
-    }
-    var f = new Uint8Array(analizador.frequencyBinCount);
-    analizador.getByteFrequencyData(f);
-    var suma = 0;
-    for (var i = 0; i < f.length; i++) suma += f[i];
-    var energia = Math.min(1, (suma / f.length) / 42);
+  function pinta() {
+    an.getByteFrequencyData(datos);
+    var g = 0, i;
+    for (i = 0; i < 8; i++) g += datos[i];
+    var energia = Math.min(1, (g / 8) / 185);
     if (window.__pusarPulso) window.__pusarPulso(energia);
-    var w = lienzo.width, h = lienzo.height;
-    ctx2d.clearRect(0, 0, w, h);
-    ctx2d.fillStyle = 'rgba(117,213,253,0.10)';
-    var barras = 64;
-    for (var k = 0; k < barras; k++) {
-      var v = f[Math.floor(k * (f.length * 0.5) / barras)] / 255;
-      var bh = Math.max(2, v * h * 0.86);
-      ctx2d.fillStyle = k % 8 === 0 ? 'rgba(220,151,2,0.95)' : 'rgba(117,213,253,' + (0.25 + v * 0.7) + ')';
-      ctx2d.fillRect(k * (w / barras), h - bh, Math.max(2, w / barras - 3), bh);
+    var c = lienzo.getContext('2d'), W = lienzo.width, H = lienzo.height;
+    c.clearRect(0, 0, W, H);
+    var n = 46, ancho = W / n;
+    for (i = 0; i < n; i++) {
+      var v = datos[Math.floor(i * (datos.length * 0.55) / n)] / 255;
+      var h = Math.max(3, v * H * 0.88);
+      c.fillStyle = (i % 4 === 0) ? '#dc9702' : 'rgba(117,213,253,' + (0.30 + v * 0.65).toFixed(2) + ')';
+      c.fillRect(i * ancho + ancho * 0.24, H - h, ancho * 0.52, h);
     }
-    ctx2d.strokeStyle = 'rgba(238,244,248,0.35)'; ctx2d.lineWidth = 1;
-    ctx2d.beginPath(); ctx2d.moveTo(0, h - energia * h * 0.8); ctx2d.lineTo(w, h - energia * h * 0.8); ctx2d.stroke();
-    requestAnimationFrame(programa);
+    raf = requestAnimationFrame(pinta);
   }
-  boton.addEventListener('click', function () {
-    if (!encendido) {
-      audio = new (window.AudioContext || window.webkitAudioContext)();
-      maestro = audio.createGain(); maestro.gain.value = 0.5;
-      analizador = audio.createAnalyser(); analizador.fftSize = 512;
-      maestro.connect(analizador); analizador.connect(audio.destination);
-      siguiente = audio.currentTime + 0.1; paso = 0;
-      encendido = true; window.__audioActivo = true;
-      boton.textContent = 'Parar el pulso';
-      programa();
-    } else {
-      window.__audioActivo = false; encendido = false;
-      if (audio) audio.close();
-      boton.textContent = 'Encender el pulso';
-      ctx2d.clearRect(0, 0, lienzo.width, lienzo.height);
-    }
-  });
+  function enciende() {
+    prepara();
+    if (ctx.state === 'suspended') ctx.resume();
+    audio.play();
+    sonando = true;
+    boton.textContent = 'Pausar el latido';
+    if (estado) estado.textContent = 'sonando';
+    if (!raf) raf = requestAnimationFrame(pinta);
+  }
+  function apaga() {
+    audio.pause();
+    sonando = false;
+    boton.textContent = 'Encender el latido';
+    if (estado) estado.textContent = 'en pausa';
+  }
+  boton.addEventListener('click', function () { sonando ? apaga() : enciende(); });
+  audio.addEventListener('ended', apaga);
 })();

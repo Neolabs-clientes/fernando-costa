@@ -6,6 +6,7 @@
 <title>FERNANDOCOSTA — Web oficial | Dolor de Barrio, gira y tienda</title>
 <meta name="description" content="Web oficial de FERNANDOCOSTA: Dolor de Barrio, discografía, videoclips, tienda y contratación. Fechas de la gira, entradas y material de prensa.">
 <meta name="theme-color" content="#05070a">
+<meta name="robots" content="noindex,nofollow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="FERNANDOCOSTA — Web oficial">
 <meta property="og:description" content="Dolor de Barrio, la discografía, los videoclips y la tienda oficial.">
@@ -71,12 +72,13 @@
     <div>
       <p class="etq entrada">Sonido</p>
       <h2 class="entrada">El ritmo se ve</h2>
-      <p class="entrada">Enciende el pulso y mira cómo responde la portada: el grano, el cromatismo de la luz y el latido del fondo van siguiendo el ritmo, no una animación en bucle.</p>
+      <p class="entrada">Dale al play: suena un fragmento de su último tema y la portada va con él. El grano, el cromatismo y el latido del fondo siguen la música de verdad, no una animación en bucle.</p>
       <div class="altavoz entrada">
-        <button class="boton ambar" id="activar" type="button">Encender el pulso</button>
-        <div class="lector"><span>ritmo <b>120 BPM</b></span><span>analizador <b>FFT 512</b></span><span>se genera <b>en vivo</b></span></div>
+        <button class="boton ambar" id="activar" type="button">Encender el latido</button>
+        <div class="lector"><span>suena <b>Grecofernanda</b></span><span>fragmento <b>30 s</b></span><span>estado <b id="estado">en pausa</b></span></div>
       </div>
-      <p class="aviso entrada">En esta maqueta el pulso lo genera la propia web. Con el máster conectado, el mismo analizador late con el tema real.</p>
+      <p class="aviso entrada">Fragmento de 30 segundos de «Grecofernanda» (con Grecas), su último tema. Se puede pausar en cualquier momento.</p>
+      <audio id="clip" src="assets/audio/grecofernanda-30s.mp3" preload="metadata" loop></audio>
     </div>
     <div class="entrada"><canvas id="pulso" width="1240" height="775" aria-label="Visual del ritmo"></canvas></div>
   </div>
