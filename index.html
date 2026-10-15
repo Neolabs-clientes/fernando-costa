@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FERNANDOCOSTA — Web oficial | Dolor de Barrio, gira y tienda</title>
+<meta name="description" content="Web oficial de FERNANDOCOSTA: Dolor de Barrio, discografía, videoclips, tienda y contratación. Fechas de la gira, entradas y material de prensa.">
+<meta name="theme-color" content="#05070a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FERNANDOCOSTA — Web oficial">
+<meta property="og:description" content="Dolor de Barrio, la discografía, los videoclips y la tienda oficial.">
+<meta property="og:image" content="assets/og.jpg">
+<meta property="og:url" content="https://fernandocostaoficial.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/marca/logo.webp">
+<link rel="preload" as="image" href="assets/hero/portada.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/estilo.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MusicGroup","name":"FERNANDOCOSTA","genre":"Rap","url":"https://fernandocostaoficial.com/",
+"sameAs":["https://www.instagram.com/fernanditoactivated/","https://www.youtube.com/channel/UC8rd9GtkTHNk6aj617cP9wQ","https://open.spotify.com/artist/5dC7EcwWdf9Qj4VvJab4rZ","https://www.tiktok.com/@fernandocostamorales","https://twitter.com/fernanditocosta"],
+"album":[{"@type":"MusicAlbum","name":"Dolor de Barrio"},{"@type":"MusicAlbum","name":"Amor de Barrio"},{"@type":"MusicAlbum","name":"Yipiyou"}]}
+</script>
+</head>
+<body>
+<div id="carga"><img src="assets/marca/emblema.webp" alt="FERNANDOCOSTA" width="1400" height="242"><span class="barra"><i></i></span></div>
+
+<header class="cabeza" id="cabeza">
+  <div class="wrap barra">
+    <a class="marca" href="#arriba" aria-label="FERNANDOCOSTA, inicio">FERNANDOCOSTA</a>
+    <nav class="enlaces" aria-label="Principal">
+      <a href="#disco">Disco</a><a href="#sonido">Sonido</a><a href="#gira">Gira</a><a href="#tienda">Tienda</a><a href="#videos">Vídeos</a><a href="#prensa">Prensa</a><a href="#contacto">Contacto</a>
+    </nav>
+    <div class="acciones">
+      <a class="boton ambar" href="#gira">Entradas</a>
+      <button class="hamb" id="hamb" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="movil" id="movil">
+  <a href="#disco">Disco</a><a href="#sonido">Sonido</a><a href="#gira">Gira</a><a href="#tienda">Tienda</a><a href="#videos">Vídeos</a><a href="#prensa">Prensa</a><a href="#contacto">Contacto</a>
+</div>
+<main id="arriba">
+<section class="portada">
+  <img id="foto-portada" src="assets/hero/portada.webp" alt="FERNANDOCOSTA en el shooting de Dolor de Barrio" width="2000" height="1614" fetchpriority="high" decoding="async">
+  <canvas id="lienzo" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="etq entrada">Web oficial · Rap</p>
+    <h1 class="titulo" id="titulo">FERNANDOCOSTA</h1>
+    <div class="sub">
+      <p class="lema entrada"><b>Dolor de Barrio</b>, el disco con el que celebra diez años de carrera: crudo, descarado y fiel a sus orígenes.</p>
+      <div class="discos entrada"><b>Dolor de Barrio</b><b>Amor de Barrio</b><b>Yipiyou</b></div>
+    </div>
+    <div class="botones">
+      <a class="boton ambar" href="https://open.spotify.com/artist/5dC7EcwWdf9Qj4VvJab4rZ" target="_blank" rel="noopener">Escuchar el disco</a>
+      <a class="boton" href="#gira">Fechas de gira</a>
+      <a class="boton" href="#tienda">Tienda oficial</a>
+    </div>
+  </div>
+  <span class="baja">Baja<i></i></span>
+</section>
+
+<section class="marquesina" aria-hidden="true">
+  <div class="tira">
+    <span><b>Dolor de Barrio</b></span><span>Grecofernanda</span><span>Apretao</span><span><b>Amor de Barrio</b></span><span>Mamahuevo</span><span>No me llores</span><span><b>Yipiyou</b></span><span>Mama</span>
+    <span><b>Dolor de Barrio</b></span><span>Grecofernanda</span><span>Apretao</span><span><b>Amor de Barrio</b></span><span>Mamahuevo</span><span>No me llores</span><span><b>Yipiyou</b></span><span>Mama</span>
+  </div>
+</section>
+
+<section class="sonido" id="sonido">
+  <div class="wrap rejilla">
+    <div>
+      <p class="etq entrada">Sonido</p>
+      <h2 class="entrada">El ritmo se ve</h2>
+      <p class="entrada">Enciende el pulso y mira cómo responde la portada: el grano, el cromatismo de la luz y el latido del fondo van siguiendo el ritmo, no una animación en bucle.</p>
+      <div class="altavoz entrada">
+        <button class="boton ambar" id="activar" type="button">Encender el pulso</button>
+        <div class="lector"><span>ritmo <b>120 BPM</b></span><span>analizador <b>FFT 512</b></span><span>se genera <b>en vivo</b></span></div>
+      </div>
+      <p class="aviso entrada">En esta maqueta el pulso lo genera la propia web. Con el máster conectado, el mismo analizador late con el tema real.</p>
+    </div>
+    <div class="entrada"><canvas id="pulso" width="1240" height="775" aria-label="Visual del ritmo"></canvas></div>
+  </div>
+</section>
+
+<section class="disco" id="disco">
+  <div class="wrap rejilla">
+    <div class="caratula entrada">
+      <span class="sello">Nuevo</span>
+      <img src="assets/tienda/cd-dolor.webp" alt="Carátula de Dolor de Barrio" width="900" height="900" loading="lazy">
+    </div>
+    <div>
+      <p class="etq entrada">Discografía</p>
+      <h2 class="entrada">Dolor de Barrio</h2>
+      <p class="texto entrada">Su último trabajo: un disco crudo y descarado, hecho desde el barrio y para el barrio, con el que celebra diez años de carrera. El último adelanto es <b>Grecofernanda</b>, junto a Grecas.</p>
+      <ul class="pistas entrada">
+        <li><i>Videoclip</i><b>Grecofernanda</b><em>ft. Grecas</em></li>
+        <li><i>Videoclip</i><b>Apretao</b><em>ft. L-Gante</em></li>
+        <li><i>Videoclip</i><b>Mamahuevo</b><em>en solitario</em></li>
+        <li><i>Visualizer</i><b>Amor de Barrio</b><em>en solitario</em></li>
+        <li><i>Visualizer</i><b>No me llores</b><em>ft. Natos</em></li>
+        <li><i>Visualizer</i><b>Mama</b><em>en solitario</em></li>
+      </ul>
+      <div class="botones" style="margin-top:28px">
+        <a class="boton ambar" href="https://open.spotify.com/artist/5dC7EcwWdf9Qj4VvJab4rZ" target="_blank" rel="noopener">Escuchar en Spotify</a>
+        <a class="boton" href="#videos">Ver los videoclips</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="discos-3">
+      <a class="entrada" href="https://fernandocostaoficial.com/products/cd-dolor-de-barrio" target="_blank" rel="noopener"><span>CD</span><b>Dolor de Barrio</b><p>19,90 € · el disco nuevo</p></a>
+      <a class="entrada" href="https://fernandocostaoficial.com/products/cd-amor-de-barrio" target="_blank" rel="noopener"><span>CD</span><b>Amor de Barrio</b><p>19,90 € · el más honesto</p></a>
+      <a class="entrada" href="https://fernandocostaoficial.com/products/fernandocosta-yipiyou" target="_blank" rel="noopener"><span>CD</span><b>Yipiyou</b><p>13,00 € · primer trabajo, 2018</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="gira" id="gira">
+  <div class="wrap">
+    <div class="cabeza-sec">
+      <div><p class="etq entrada">En directo</p><h2 class="entrada">Gira 2026</h2></div>
+      <p class="nota entrada">Las fechas se van cerrando mes a mes. Aquí aparecerá cada una con su ciudad, su sala y su enlace de entradas el mismo día que se anuncie.</p>
+    </div>
+    <div class="cartel">
+      <div class="fila pendiente entrada"><span class="dia">Próximas fechas</span><span class="ciudad">Por anunciar</span><span class="sala">Ciudad y sala por confirmar</span><span class="estado">Entradas pronto</span></div>
+    </div>
+    <div class="aviso-gira entrada">
+      <p>Las fechas se anuncian primero en Instagram y en Spotify. Sígueme ahí y te enteras antes que nadie.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="boton ambar" href="https://www.instagram.com/fernanditoactivated/" target="_blank" rel="noopener">Seguir en Instagram</a>
+        <a class="boton" href="https://open.spotify.com/artist/5dC7EcwWdf9Qj4VvJab4rZ" target="_blank" rel="noopener">Seguir en Spotify</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tienda" id="tienda">
+  <div class="wrap">
+    <div class="cabeza-sec">
+      <div><p class="etq entrada">Tienda oficial</p><h2 class="entrada">Merch y discos</h2></div>
+      <p class="nota entrada">Envíos y pagos a través de la tienda oficial. Pulsa en cualquier prenda para verla y comprarla.</p>
+    </div>
+    <div class="estante">
+      <a class="pieza entrada" href="https://fernandocostaoficial.com/products/camiseta-grecofernanda" target="_blank" rel="noopener">
+        <span class="foto"><img src="assets/tienda/camiseta-grecofernanda.webp" alt="Camiseta Grecofernanda" width="900" height="900" loading="lazy"></span>
+        <span class="cuerpo"><span class="tipo">Camiseta</span><h3>Grecofernanda</h3><span class="pvp"><b>34,90 €</b><span>Ver</span></span></span>
+      </a>
+      <a class="pieza entrada" href="https://fernandocostaoficial.com/products/camiseta-futbol-fernandocosta-ibiza" target="_blank" rel="noopener">
+        <span class="foto"><img src="assets/tienda/camiseta-futbol.webp" alt="Camiseta de fútbol FernandoCosta Ibiza" width="900" height="900" loading="lazy"></span>
+        <span class="cuerpo"><span class="tipo">Camiseta</span><h3>Fútbol Ibiza</h3><span class="pvp"><b>49,90 €</b><span>Ver</span></span></span>
+      </a>
+      <a class="pieza entrada" href="https://fernandocostaoficial.com/products/sudadera-metralleta" target="_blank" rel="noopener">
+        <span class="foto"><img src="assets/tienda/sudadera-metralleta.webp" alt="Sudadera Metralleta" width="900" height="900" loading="lazy"></span>
+        <span class="cuerpo"><span class="tipo">Sudadera</span><h3>Metralleta</h3><span class="pvp"><b>44,90 €</b><span>Ver</span></span></span>
+      </a>
+      <a class="pieza entrada" href="https://fernandocostaoficial.com/products/camiseta-collage-2025" target="_blank" rel="noopener">
+        <span class="foto"><img src="assets/tienda/camiseta-collage.webp" alt="Camiseta Collage 2025" width="900" height="900" loading="lazy"></span>
+        <span class="cuerpo"><span class="tipo">Camiseta</span><h3>Collage 2025</h3><span class="pvp"><b>29,90 €</b><span>Ver</span></span></span>
+      </a>
+      <a class="pieza entrada" href="https://fernandocostaoficial.com/products/camiseta-zipo-negra" target="_blank" rel="noopener">
+        <span class="foto"><img src="assets/tienda/camiseta-zipo.webp" alt="Camiseta Zipo negra" width="900" height="900" loading="lazy"></span>
+        <span class="cuerpo"><span class="tipo">Camiseta</span><h3>Zipo negra</h3><span class="pvp"><b>29,90 €</b><span>Ver</span></span></span>
+      </a>
+      <a class="pieza entrada" href="https://fernandocostaoficial.com/products/camiseta-portada" target="_blank" rel="noopener">
+        <span class="foto"><img src="assets/tienda/camiseta-portada.webp" alt="Camiseta Portada" width="900" height="900" loading="lazy"></span>
+        <span class="cuerpo"><span class="tipo">Camiseta</span><h3>Portada</h3><span class="pvp"><b>29,90 €</b><span>Ver</span></span></span>
+      </a>
+      <a class="pieza entrada" href="https://fernandocostaoficial.com/products/camiseta-tag" target="_blank" rel="noopener">
+        <span class="foto"><img src="assets/tienda/camiseta-tag.webp" alt="Camiseta Tag negra" width="900" height="900" loading="lazy"></span>
+        <span class="cuerpo"><span class="tipo">Camiseta</span><h3>Tag negra</h3><span class="pvp"><b>24,90 €</b><span>Ver</span></span></span>
+      </a>
+      <a class="pieza entrada" href="https://fernandocostaoficial.com/products/cd-dolor-de-barrio" target="_blank" rel="noopener">
+        <span class="foto"><img src="assets/tienda/cd-dolor.webp" alt="CD Dolor de Barrio" width="900" height="900" loading="lazy"></span>
+        <span class="cuerpo"><span class="tipo">CD</span><h3>Dolor de Barrio</h3><span class="pvp"><b>19,90 €</b><span>Ver</span></span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="videos" id="videos">
+  <div class="wrap">
+    <div class="cabeza-sec">
+      <div><p class="etq entrada">Vídeos</p><h2 class="entrada">Videoclips y visualizers</h2></div>
+      <p class="nota entrada">Pulsa para reproducir. El vídeo se carga en ese momento, así la web sigue siendo ligera.</p>
+    </div>
+    <div class="muro">
+      <div class="video entrada" data-id="_U4EH4j3r7Y" data-titulo="Grecofernanda ft. Grecas" role="button" tabindex="0" aria-label="Reproducir Grecofernanda"><img src="assets/video/_U4EH4j3r7Y.webp" alt="Grecofernanda ft. Grecas" width="1280" height="720" loading="lazy"><span class="play"><i></i></span></div>
+      <div class="video entrada" data-id="ao6rxGDtiFo" data-titulo="Apretao ft. L-Gante" role="button" tabindex="0" aria-label="Reproducir Apretao"><img src="assets/video/ao6rxGDtiFo.webp" alt="Apretao ft. L-Gante" width="1280" height="720" loading="lazy"><span class="play"><i></i></span></div>
+      <div class="video entrada" data-id="cjxqIFqXUQM" data-titulo="Mamahuevo" role="button" tabindex="0" aria-label="Reproducir Mamahuevo"><img src="assets/video/cjxqIFqXUQM.webp" alt="Mamahuevo" width="1280" height="720" loading="lazy"><span class="play"><i></i></span></div>
+      <div class="video entrada" data-id="j0k0eeeOg2I" data-titulo="Amor de Barrio" role="button" tabindex="0" aria-label="Reproducir Amor de Barrio"><img src="assets/video/j0k0eeeOg2I.webp" alt="Amor de Barrio" width="1280" height="720" loading="lazy"><span class="play"><i></i></span></div>
+      <div class="video entrada" data-id="r4VDcu9wPsY" data-titulo="No me llores ft. Natos" role="button" tabindex="0" aria-label="Reproducir No me llores"><img src="assets/video/r4VDcu9wPsY.webp" alt="No me llores ft. Natos" width="1280" height="720" loading="lazy"><span class="play"><i></i></span></div>
+      <div class="video entrada" data-id="u_vgGgXpA1k" data-titulo="Mama" role="button" tabindex="0" aria-label="Reproducir Mama"><img src="assets/video/u_vgGgXpA1k.webp" alt="Mama" width="1280" height="720" loading="lazy"><span class="play"><i></i></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="prensa" id="prensa">
+  <div class="wrap rejilla">
+    <div>
+      <p class="etq entrada">Prensa</p>
+      <h2 class="entrada">Material para medios</h2>
+      <p class="entrada">Fotos del último shooting en alta, el logotipo en limpio y la ficha con los datos del artista. Todo listo para descargar, sin pedirlo por correo.</p>
+      <div class="descargas">
+        <a class="entrada" href="assets/prensa/pack-fotos.zip" download><span>Pack de fotos + logo (ZIP)</span><span>Descargar</span></a>
+        <a class="entrada" href="assets/marca/logo.webp" download><span>Logotipo en color</span><span>Descargar</span></a>
+        <a class="entrada" href="assets/hero/retrato.webp" download><span>Retrato en alta</span><span>Descargar</span></a>
+      </div>
+    </div>
+    <div class="mosaico entrada">
+      <img src="assets/prensa/prensa-01.webp" alt="Fotografía de prensa de FERNANDOCOSTA" width="900" height="1200" loading="lazy">
+      <img src="assets/prensa/prensa-03.webp" alt="Fotografía de prensa de FERNANDOCOSTA" width="900" height="1200" loading="lazy">
+      <img src="assets/prensa/prensa-05.webp" alt="Fotografía de prensa de FERNANDOCOSTA" width="900" height="1200" loading="lazy">
+      <img src="assets/prensa/prensa-07.webp" alt="Fotografía de prensa de FERNANDOCOSTA" width="900" height="1200" loading="lazy">
+      <img src="assets/prensa/prensa-09.webp" alt="Fotografía de prensa de FERNANDOCOSTA" width="900" height="1200" loading="lazy">
+      <img src="assets/prensa/prensa-11.webp" alt="Fotografía de prensa de FERNANDOCOSTA" width="900" height="1200" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="wrap rejilla">
+    <div>
+      <p class="etq entrada">Contacto</p>
+      <h2 class="entrada">Contratación, prensa y tienda</h2>
+      <p class="entrada">Elige el motivo y completa lo que sepas. Con la ciudad, la fecha y el presupuesto ya se puede contestar sin más idas y venidas.</p>
+      <ul class="bases">
+        <li><b>Contratación</b><span>Fechas de gira, festivales y bolos privados.</span></li>
+        <li><b>Prensa</b><span>Entrevistas, material gráfico y acreditaciones.</span></li>
+        <li><b>Tienda</b><span>Pedidos, tallas y envíos.</span></li>
+        <li><b>Redes</b><span>Instagram y TikTok para el día a día.</span></li>
+      </ul>
+    </div>
+    <form id="book" novalidate>
+      <div class="campos">
+        <label>Tu nombre<input id="nom" name="nom" type="text" autocomplete="name" required></label>
+        <label>Tu correo<input id="mail" name="mail" type="email" autocomplete="email" required></label>
+        <label>Motivo
+          <select id="tipo" name="tipo">
+            <option>Contratación</option><option>Prensa</option><option>Tienda</option><option>Otro</option>
+          </select>
+        </label>
+        <label>Ciudad<input id="ciudad" name="ciudad" type="text" placeholder="Madrid"></label>
+        <label>Fecha del evento<input id="fecha" name="fecha" type="date"></label>
+        <label>Caché aproximada<input id="cache" name="cache" type="text" placeholder="Opcional"></label>
+        <label class="ancho">Cuéntame<textarea id="msg" name="msg" placeholder="Sala, aforo, qué necesitas..."></textarea></label>
+        <label class="ancho" style="grid-column:1/-1"><button class="boton ambar" type="submit" style="width:100%">Enviar la propuesta</button></label>
+      </div>
+      <p class="aviso">Se abre tu correo con todo escrito. Solo tienes que darle a enviar.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap rejilla">
+    <div>
+      <p class="marca">FERNANDOCOSTA</p>
+      <p style="color:var(--gris);margin-top:14px;max-width:36ch">Rap. Dolor de Barrio. Diez años de carrera, y los que quedan.</p>
+    </div>
+    <div>
+      <h4>En esta web</h4>
+      <ul>
+        <li><a href="#disco">Disco</a></li>
+        <li><a href="#gira">Gira</a></li>
+        <li><a href="#tienda">Tienda</a></li>
+        <li><a href="#videos">Vídeos</a></li>
+        <li><a href="#prensa">Prensa</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Escúchame</h4>
+      <ul>
+        <li><a href="https://open.spotify.com/artist/5dC7EcwWdf9Qj4VvJab4rZ" target="_blank" rel="noopener">Spotify</a></li>
+        <li><a href="https://www.youtube.com/channel/UC8rd9GtkTHNk6aj617cP9wQ" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.instagram.com/fernanditoactivated/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@fernandocostamorales" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://twitter.com/fernanditocosta" target="_blank" rel="noopener">X</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <span>© 2026 FERNANDOCOSTA</span>
+    <span><a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a></span>
+    <span>Diseño y desarrollo: Neo Labs</span>
+  </div>
+</footer>
+
+<script src="assets/cine.js" defer></script>
+<script src="assets/sonido.js" defer></script>
+</body>
+</html>
